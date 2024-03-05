@@ -1,7 +1,7 @@
 package com.huangsam.registry
 
 object KeyRegistry {
-    private var mapping = HashMap<String, String>();
+    private var mapping = HashMap<String, String>()
 
     fun getValue(key: String): String? {
         return mapping[key]
@@ -12,6 +12,6 @@ object KeyRegistry {
     }
 
     fun clearValues() {
-        mapping = HashMap<String, String>()
+        mapping = HashMap()
     }
 }
