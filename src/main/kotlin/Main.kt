@@ -1,4 +1,5 @@
 import com.huangsam.hello.Hello
+import com.huangsam.lambda.LambdaFun
 import com.huangsam.payment.PaymentFactory
 import com.huangsam.person.Engineer
 
@@ -8,6 +9,12 @@ fun demoHello() {
     hello.yell()
     hello.whisper()
     hello.address("Sam")
+}
+
+fun demoLambda() {
+    val ints = (1..10).toList()
+    val evenCount = LambdaFun.filteredEvenCount(ints)
+    println("The list ${ints} has ${evenCount} even numbers")
 }
 
 fun demoPayment() {
@@ -32,6 +39,8 @@ fun demoPerson() {
 
 fun main() {
     demoHello()
+
+    demoLambda()
 
     demoPayment()
 
