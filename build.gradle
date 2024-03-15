@@ -3,7 +3,7 @@ plugins {
     id 'checkstyle'
 }
 
-group = 'org.example'
+group = 'com.huangsam'
 version = '1.0-SNAPSHOT'
 
 repositories {
