@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.*
 
 class ApplePayTest {
-
     private val originalAmount = 100
     private var applePay = ApplePay(originalAmount)
 
@@ -16,12 +15,12 @@ class ApplePayTest {
     }
 
     @Test
-    fun method() {
+    fun paymentMethodShowsFine() {
         assertEquals(applePay.method(), "Apple Incorporated")
     }
 
     @Test
-    fun getBalanceAmount() {
+    fun balanceMatchesOriginal() {
         assertEquals(applePay.balance(), originalAmount)
     }
 
@@ -37,6 +36,6 @@ class ApplePayTest {
 
     @Test
     fun payOverFailure() {
-        assertFalse(applePay.pay(110))
+        assertFalse(applePay.pay(originalAmount + 1))
     }
 }

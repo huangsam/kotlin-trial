@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.*
 
 class LambdaFunTest {
-
     @Test
     fun filteredEvenCountMatchesAll() {
         val data = listOf(2, 4, 6, 8)

@@ -12,14 +12,14 @@ class KeyRegistryTest {
     }
 
     @Test
-    fun getRegisteredKey() {
+    fun registrySetAndGetWorks() {
         KeyRegistry.setValue("hello", "world")
         val value = KeyRegistry.getValue("hello")
         assertTrue(value is String && value.startsWith("wo"))
     }
 
     @Test
-    fun getMissingKey() {
+    fun getMissingKeyIsNull() {
         val value = KeyRegistry.getValue("hello")
         assertNull(value)
     }
