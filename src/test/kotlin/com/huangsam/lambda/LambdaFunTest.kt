@@ -3,6 +3,8 @@ package com.huangsam.lambda
 import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.ValueSource
 
 class LambdaFunTest {
     private val oneToFour = (1..4).toList()
@@ -33,13 +35,15 @@ class LambdaFunTest {
         assertTrue(result.all { it -> it == 0 })
     }
 
-    @Test
-    fun scaleValuesWithPositiveFactor() {
-        val result = LambdaFun.scaleValues(oneToFour, 2)
+    @ParameterizedTest
+    @ValueSource(ints = [1, 5, 25, 125])
+    fun scaleValuesWithPositiveFactor(factorValue: Int) {
+        val result = LambdaFun.scaleValues(oneToFour, factorValue)
         assertTrue(result.all { it -> it > 0 })
     }
 
-    @Test
+    @ParameterizedTest
+    @ValueSource(ints = [-1, -3, -9, -27])
     fun scaleValuesWithNegativeFactor() {
         val result = LambdaFun.scaleValues(oneToFour, -3)
         assertTrue(result.all { it -> it < 0 })
