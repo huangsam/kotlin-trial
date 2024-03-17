@@ -8,4 +8,7 @@ object LambdaFun {
         }
         return evenCount
     }
+
+    fun scaleValues(intList: List<Int>, factor: Int): List<Int> =
+        intList.map { intVal -> intVal * factor }
 }
