@@ -31,5 +31,6 @@ ktlint {
         reporter ReporterType.CHECKSTYLE
         reporter ReporterType.HTML
         reporter ReporterType.JSON
+        reporter ReporterType.SARIF
     }
 }
