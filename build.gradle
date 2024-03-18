@@ -34,6 +34,10 @@ tasks.named("detekt").configure {
     }
 }
 
+detekt {
+    autoCorrect = true
+}
+
 /**
  * Followed these resources to get Detekt to run on each commit:
  * https://detekt.dev/docs/gettingstarted/git-pre-commit-hook/
