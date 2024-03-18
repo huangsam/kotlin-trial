@@ -26,7 +26,7 @@ class MockitoTest {
     }
 
     @Test
-    fun checkAddCountWithVerify() {
+    fun checkAddCountWithMockedList() {
         mockedList.add(1)
         verify(mockedList).add(1)
         assertEquals(0, mockedList.count())
@@ -35,7 +35,7 @@ class MockitoTest {
     }
 
     @Test
-    fun checkAddCountWithSpy() {
+    fun checkAddCountWithSpyList() {
         spyList.add(1)
         spyList.add(2)
         verify(spyList).add(1)
