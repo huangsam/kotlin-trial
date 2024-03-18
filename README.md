@@ -1,6 +1,6 @@
 # Kotlin Trial
 
-Coding in Kotlin to explore tools like [Detekt](https://detekt.dev/) and the overall Kotlin ecosystem.
+Coding in Kotlin to explore tools like [Detekt](https://detekt.dev/) and [ktlint](https://pinterest.github.io/ktlint/latest/), as well as taking stock of the overall Kotlin ecosystem.
 
 ## Getting started
 
