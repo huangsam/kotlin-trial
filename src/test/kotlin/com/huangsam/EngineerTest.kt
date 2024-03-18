@@ -16,6 +16,10 @@ class EngineerTest {
     private val outContent = ByteArrayOutputStream()
     private val originalOut = System.out
 
+    private fun assertContent(result: String) {
+        assertEquals(result, outContent.toString())
+    }
+
     @BeforeEach
     fun setUpStreams() {
         System.setOut(PrintStream(outContent))
@@ -29,30 +33,30 @@ class EngineerTest {
     @Test
     fun engineerCanCode() {
         engineer.code()
-        assertEquals("$name is coding\n", outContent.toString())
+        assertContent("$name is coding\n")
     }
 
     @Test
     fun engineerCanRun() {
         engineer.run()
-        assertEquals("$name is running\n", outContent.toString())
+        assertContent("$name is running\n")
     }
 
     @Test
     fun engineerCanWalk() {
         engineer.walk()
-        assertEquals("$name is walking\n", outContent.toString())
+        assertContent("$name is walking\n")
     }
 
     @Test
     fun engineerCanEat() {
         engineer.eat()
-        assertEquals("$name is eating\n", outContent.toString())
+        assertContent("$name is eating\n")
     }
 
     @Test
     fun engineerCanSleep() {
         engineer.sleep()
-        assertEquals("$name is sleeping\n", outContent.toString())
+        assertContent("$name is sleeping\n")
     }
 }
