@@ -25,6 +25,8 @@ class KeyRegistry {
         @Volatile
         private var instance: KeyRegistry? = null
 
-        fun getInstance() = synchronized(this) { instance ?: KeyRegistry().also { instance = it } }
+        fun getInstance() = instance ?: synchronized(this) {
+            instance ?: KeyRegistry().also { instance = it }
+        }
     }
 }
