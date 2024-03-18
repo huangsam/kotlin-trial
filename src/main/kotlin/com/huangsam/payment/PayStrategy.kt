@@ -29,8 +29,8 @@ abstract class PayStrategy : Payable {
             balanceAmount: Int = DEFAULT_BALANCE,
         ): PayStrategy {
             return when (method) {
-                PaymentMethod.GOOGLE -> GooglePay(balanceAmount)
                 PaymentMethod.APPLE -> ApplePay(balanceAmount)
+                PaymentMethod.GOOGLE -> GooglePay(balanceAmount)
             }
         }
     }
