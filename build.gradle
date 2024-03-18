@@ -41,6 +41,6 @@ tasks.named("detekt").configure {
  */
 tasks.register('addDetektHook') {
     exec {
-        commandLine("cp", ".hooks/pre-commit", "./.git/hooks")
+        commandLine("cp", ".hooks/pre-commit", ".git/hooks")
     }
 }
