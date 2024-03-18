@@ -52,6 +52,6 @@ class IntegerFunTest {
     @Test
     fun sumOfSquaresIsCorrect() {
         val result = IntegerFun.sumOfSquares(oneToFour)
-        assertEquals(result, 1 + 4 + 9 + 16)
+        assertEquals(1 + 4 + 9 + 16, result)
     }
 }

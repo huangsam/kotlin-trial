@@ -16,7 +16,7 @@ class EngineerTest {
     private val originalOut = System.out
 
     private fun assertContent(result: String) {
-        assertEquals(result, contentOut.toString())
+        assertEquals(contentOut.toString(), result)
     }
 
     @BeforeEach

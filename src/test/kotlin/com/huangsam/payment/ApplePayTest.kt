@@ -17,7 +17,7 @@ class ApplePayTest {
 
     @Test
     fun balanceMatchesOriginal() {
-        assertEquals(applePay.balance(), originalAmount)
+        assertEquals(originalAmount, applePay.balance())
     }
 
     @Test

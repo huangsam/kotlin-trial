@@ -20,7 +20,7 @@ class KeyRegistryTest {
     fun getWorldFromSetKey() {
         registry.setValue(hello, world)
         val value = registry.getValue(hello)
-        assertEquals(requireNotNull(value), world)
+        assertEquals(world, requireNotNull(value))
     }
 
     @Test
