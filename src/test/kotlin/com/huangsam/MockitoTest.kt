@@ -7,6 +7,7 @@ import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.Mock
 import org.mockito.Spy
 import org.mockito.junit.jupiter.MockitoExtension
+import org.mockito.kotlin.argumentCaptor
 import org.mockito.kotlin.reset
 import org.mockito.kotlin.verify
 import org.mockito.kotlin.whenever
@@ -21,7 +22,7 @@ class MockitoTest {
 
     @BeforeEach
     fun resetMockitoAssets() {
-        reset(mockedList)
+        reset(mockedList, spyList)
         spyList.clear()
     }
 
@@ -41,5 +42,13 @@ class MockitoTest {
         verify(spyList).add(1)
         verify(spyList).add(2)
         assertEquals(2, spyList.count())
+    }
+
+    @Test
+    fun checkAddWithOneArgumentCaptor() {
+        val captor = argumentCaptor<Int>()
+        mockedList.add(1)
+        verify(mockedList).add(captor.capture())
+        assertEquals(1, captor.lastValue)
     }
 }
