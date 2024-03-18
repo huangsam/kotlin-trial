@@ -34,7 +34,11 @@ tasks.named("detekt").configure {
     }
 }
 
-// https://detekt.dev/docs/gettingstarted/git-pre-commit-hook/
+/**
+ * Followed these resources to get Detekt to run on each commit:
+ * https://detekt.dev/docs/gettingstarted/git-pre-commit-hook/
+ * https://www.delasign.com/blog/android-studio-gradle-precommit-git-script/
+ */
 tasks.register('addDetektHook') {
     exec {
         commandLine("cp", ".hooks/pre-commit", "./.git/hooks")
