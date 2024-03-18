@@ -21,6 +21,7 @@ Add [hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) to your lo
 
 - https://kotlinlang.org/docs/home.html
 - https://www.w3schools.com/KOTLIN/index.php
+- https://www.baeldung.com/kotlin/
 - https://github.com/KotlinBy/awesome-kotlin
 - https://github.com/akullpp/awesome-java
 - https://openjdk.org/
