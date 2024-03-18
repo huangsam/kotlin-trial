@@ -24,7 +24,7 @@ abstract class PayStrategy : Payable {
     }
 
     companion object Factory {
-        fun createFromMethodName(
+        fun createFromMethod(
             method: PaymentMethod,
             balanceAmount: Int = DEFAULT_BALANCE,
         ): PayStrategy {
