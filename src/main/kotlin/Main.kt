@@ -45,10 +45,7 @@ fun demoPerson() {
 
 fun main() {
     demoHello()
-
     demoLambda()
-
     demoPayment()
-
     demoPerson()
 }
