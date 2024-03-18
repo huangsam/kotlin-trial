@@ -8,9 +8,7 @@ abstract class PayStrategy : Payable {
     abstract fun company(): String
 
     override fun pay(paymentAmount: Int): Boolean {
-        if (paymentAmount > balanceAmount) {
-            return false
-        }
+        if (paymentAmount > balanceAmount) return false
         balanceAmount -= paymentAmount
         return true
     }
