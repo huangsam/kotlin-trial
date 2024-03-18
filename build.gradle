@@ -1,8 +1,8 @@
-import io.gitlab.arturbosch.detekt.Detekt
+import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
 plugins {
     id('org.jetbrains.kotlin.jvm') version('1.9.23')
-    id('io.gitlab.arturbosch.detekt') version('1.23.5')
+    id('org.jlleitschuh.gradle.ktlint') version('12.1.0')
 }
 
 group = 'com.huangsam'
@@ -26,29 +26,17 @@ kotlin {
     jvmToolchain(21)
 }
 
-/**
- * Enable auto-correction for Kotlin code via Detekt.
- * https://stackoverflow.com/q/57336354
- *
- * Write build reports after running Detekt.
- * https://detekt.dev/docs/gettingstarted/gradle/
- */
-tasks.withType(Detekt).configureEach {
-    autoCorrect = true
-    reports.html.required.set(true)
-    reports.md.required.set(true)
-    reports.sarif.required.set(true)
-    reports.txt.required.set(true)
-    reports.xml.required.set(true)
+ktlint {
+    reporters {
+        reporter ReporterType.CHECKSTYLE
+        reporter ReporterType.HTML
+        reporter ReporterType.JSON
+        reporter ReporterType.SARIF
+    }
 }
 
-/**
- * Get Detekt to run on each commit.
- * https://detekt.dev/docs/gettingstarted/git-pre-commit-hook/
- * https://www.delasign.com/blog/android-studio-gradle-precommit-git-script/
- */
-tasks.register('addDetektHook') {
+tasks.register('addHooks') {
     exec {
-        commandLine("cp", ".hooks/pre-commit", ".git/hooks")
+        commandLine('cp', '.hooks/pre-commit', '.git/hooks')
     }
 }
