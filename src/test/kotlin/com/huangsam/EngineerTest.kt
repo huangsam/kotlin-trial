@@ -12,6 +12,7 @@ class EngineerTest {
     private val name = "John"
     private val engineer = Engineer(name)
 
+    // https://stackoverflow.com/q/1119385
     private val outContent = ByteArrayOutputStream()
     private val originalOut = System.out
 
@@ -28,8 +29,30 @@ class EngineerTest {
     @Test
     fun engineerCanCode() {
         engineer.code()
-
-        // https://stackoverflow.com/q/1119385
         assertEquals("$name is coding\n", outContent.toString())
+    }
+
+    @Test
+    fun engineerCanRun() {
+        engineer.run()
+        assertEquals("$name is running\n", outContent.toString())
+    }
+
+    @Test
+    fun engineerCanWalk() {
+        engineer.walk()
+        assertEquals("$name is walking\n", outContent.toString())
+    }
+
+    @Test
+    fun engineerCanEat() {
+        engineer.eat()
+        assertEquals("$name is eating\n", outContent.toString())
+    }
+
+    @Test
+    fun engineerCanSleep() {
+        engineer.sleep()
+        assertEquals("$name is sleeping\n", outContent.toString())
     }
 }
