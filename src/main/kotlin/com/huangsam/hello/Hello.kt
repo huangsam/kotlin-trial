@@ -1,25 +1,22 @@
 package com.huangsam.hello
 
 class Hello {
-    private val helloString = "Hello world"
-
-    private fun hello(): String {
-        return helloString
-    }
+    private val helloString
+        get() = "Hello world"
 
     fun say() {
-        println(hello())
+        println(helloString)
     }
 
     fun yell() {
-        println(hello().uppercase())
+        println(helloString.uppercase())
     }
 
     fun whisper() {
-        println(hello().lowercase())
+        println(helloString.lowercase())
     }
 
     fun address(name: String) {
-        println("${hello()} $name")
+        println("$helloString $name")
     }
 }
