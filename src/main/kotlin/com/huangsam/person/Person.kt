@@ -1,11 +1,18 @@
 package com.huangsam.person
 
-abstract class Person(protected val firstName: String) : CanRun, CanWalk, CanEat, CanSleep {
-    override fun run() = println("${this.firstName} is running")
+import java.io.PrintStream
 
-    override fun walk() = println("${this.firstName} is walking")
+abstract class Person(
+    protected val firstName: String,
+    printer: PrintStream = System.out,
+) : CanRun, CanWalk, CanEat, CanSleep {
+    protected val printer: PrintStream by lazy { printer }
 
-    override fun eat() = println("${this.firstName} is eating")
+    override fun run() = printer.println("${this.firstName} is running")
 
-    override fun sleep() = println("${this.firstName} is sleeping")
+    override fun walk() = printer.println("${this.firstName} is walking")
+
+    override fun eat() = printer.println("${this.firstName} is eating")
+
+    override fun sleep() = printer.println("${this.firstName} is sleeping")
 }
