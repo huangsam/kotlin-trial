@@ -25,25 +25,19 @@ kotlin {
 }
 
 /**
+ * Enable auto-correction for Kotlin code via Detekt.
+ * https://stackoverflow.com/q/57336354
+ *
  * Write build reports after running Detekt.
  * https://detekt.dev/docs/gettingstarted/gradle/
  */
-tasks.named("detekt").configure {
-    reports {
-        xml.required.set(true)
-        html.required.set(true)
-        txt.required.set(true)
-        sarif.required.set(true)
-        md.required.set(true)
-    }
-}
-
-/**
- * Enable auto-correction for Kotlin code via Detekt.
- * https://stackoverflow.com/q/57336354
- */
 detekt {
     autoCorrect = true
+    reports.html.required.set(true)
+    reports.md.required.set(true)
+    reports.sarif.required.set(true)
+    reports.txt.required.set(true)
+    reports.xml.required.set(true)
 }
 
 /**
