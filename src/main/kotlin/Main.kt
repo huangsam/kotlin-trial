@@ -13,6 +13,7 @@ fun demoHello() {
     hello.yell()
     hello.whisper()
     hello.address("Sam")
+    hello.address("Jay")
 }
 
 fun demoLambda() {
