@@ -6,6 +6,13 @@ Coding in Kotlin to explore tools like [Detekt](https://detekt.dev/) and the ove
 
 Load the project up in [Intellij IDEA](https://www.jetbrains.com/idea/).
 
+After that, you can:
+
+- Test code via `./gradlew test`
+- Build code via `./gradlew build`
+- Check code via `./gradlew ktlintCheck`
+- Format code via `./gradlew ktlintFormat`
+
 ## Helpful resources
 
 - https://kotlinlang.org/docs/home.html
