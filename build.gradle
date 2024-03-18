@@ -33,3 +33,10 @@ tasks.named("detekt").configure {
         md.required.set(true)
     }
 }
+
+// https://detekt.dev/docs/gettingstarted/git-pre-commit-hook/
+tasks.register('addDetektHook') {
+    exec {
+        commandLine("cp", ".hooks/pre-commit", "./.git/hooks")
+    }
+}
