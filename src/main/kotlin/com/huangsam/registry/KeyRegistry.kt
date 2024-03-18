@@ -7,7 +7,10 @@ object KeyRegistry {
         return mapping[key]
     }
 
-    fun setValue(key: String, value: String) {
+    fun setValue(
+        key: String,
+        value: String,
+    ) {
         mapping[key] = value
     }
 

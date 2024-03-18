@@ -1,7 +1,10 @@
 package com.huangsam.payment
 
 class PaymentFactory {
-    fun createFromMethodName(method: String, balanceAmount: Int): PaymentMethod {
+    fun createFromMethodName(
+        method: String,
+        balanceAmount: Int,
+    ): PaymentMethod {
         return when (method.lowercase()) {
             "google" -> GooglePay(balanceAmount)
             "apple" -> ApplePay(balanceAmount)
