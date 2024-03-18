@@ -1,9 +1,9 @@
-import Constants.DEFAULT_BALANCE
 import Constants.ONE
-import Constants.RANDOM_PAYMENT_AMOUNT
+import Constants.DEMO_PAYMENT_AMOUNT
 import Constants.TEN
 import com.huangsam.hello.Hello
 import com.huangsam.lambda.IntegerFun
+import com.huangsam.payment.PayStrategyAbstract
 import com.huangsam.payment.PaymentMethod
 import com.huangsam.person.Engineer
 
@@ -24,10 +24,10 @@ fun demoLambda() {
 }
 
 fun demoPayment() {
-    val applePay = PaymentMethod.createFromMethodName("apple")
+    val applePay = PayStrategyAbstract.createFromMethodName(PaymentMethod.APPLE)
     applePay.collectPaymentDetails()
     var successfulPaymentCount = 0
-    while (applePay.pay(RANDOM_PAYMENT_AMOUNT)) {
+    while (applePay.pay(DEMO_PAYMENT_AMOUNT)) {
         successfulPaymentCount += 1
     }
     println("Paid for lunch $successfulPaymentCount times before having insufficient funds")
