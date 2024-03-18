@@ -1,6 +1,5 @@
-package com.huangsam
+package com.huangsam.person
 
-import com.huangsam.person.Engineer
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
