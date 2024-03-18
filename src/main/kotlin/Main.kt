@@ -4,7 +4,7 @@ import Constants.RANDOM_PAYMENT_AMOUNT
 import Constants.TEN
 import com.huangsam.hello.Hello
 import com.huangsam.lambda.IntegerFun
-import com.huangsam.payment.PaymentFactory
+import com.huangsam.payment.PaymentMethod
 import com.huangsam.person.Engineer
 
 fun demoHello() {
@@ -24,7 +24,7 @@ fun demoLambda() {
 }
 
 fun demoPayment() {
-    val applePay = PaymentFactory().createFromMethodName("apple", DEFAULT_BALANCE)
+    val applePay = PaymentMethod.createFromMethodName("apple", DEFAULT_BALANCE)
     applePay.collectPaymentDetails()
     var successfulPaymentCount = 0
     while (applePay.pay(RANDOM_PAYMENT_AMOUNT)) {
