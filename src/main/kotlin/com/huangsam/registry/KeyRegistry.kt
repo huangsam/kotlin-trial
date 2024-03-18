@@ -20,11 +20,8 @@ class KeyRegistry {
         mapping.clear()
     }
 
-    /**
-     * Singleton pattern
-     * https://www.baeldung.com/kotlin/singleton-classes
-     */
-    companion object {
+    // https://www.baeldung.com/kotlin/singleton-classes
+    companion object Singleton {
         @Volatile
         private var instance: KeyRegistry? = null
 
