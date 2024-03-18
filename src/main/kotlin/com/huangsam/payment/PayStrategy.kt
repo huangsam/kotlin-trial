@@ -5,7 +5,7 @@ import Constants.DEFAULT_BALANCE
 abstract class PayStrategy : Payable {
     abstract var balanceAmount: Int
 
-    protected abstract fun company(): String
+    abstract fun company(): String
 
     override fun pay(paymentAmount: Int): Boolean {
         if (paymentAmount > balanceAmount) {
