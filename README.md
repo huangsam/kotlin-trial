@@ -13,6 +13,10 @@ After that, you can:
 - Check code via `./gradlew ktlintCheck`
 - Format code via `./gradlew ktlintFormat`
 
+### Git hooks
+
+Add [hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) to your local copy by running `./gradlew addHooks`.
+
 ## Helpful resources
 
 - https://kotlinlang.org/docs/home.html
