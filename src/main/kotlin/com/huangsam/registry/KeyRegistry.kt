@@ -1,6 +1,6 @@
 package com.huangsam.registry
 
-object KeyRegistry {
+class KeyRegistry {
     private var mapping: MutableMap<String, String> = mutableMapOf()
 
     fun getValue(key: String): String? {
@@ -15,6 +15,13 @@ object KeyRegistry {
     }
 
     fun clearValues() {
-        mapping = HashMap()
+        mapping = mutableMapOf()
+    }
+
+    companion object {
+        @Volatile
+        private var instance: KeyRegistry? = null
+
+        fun getInstance() = instance ?: synchronized(this) { KeyRegistry().also { instance = it } }
     }
 }

@@ -1,26 +1,28 @@
 package com.huangsam.registry
 
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNull
-import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 
 class KeyRegistryTest {
+    private val registry = KeyRegistry.getInstance()
+
     @BeforeEach
     fun beforeEach() {
-        KeyRegistry.clearValues()
+        registry.clearValues()
     }
 
     @Test
     fun registrySetAndGetWorks() {
-        KeyRegistry.setValue("hello", "world")
-        val value = KeyRegistry.getValue("hello")
-        assertTrue(value is String && value.startsWith("wo"))
+        registry.setValue("hello", "world")
+        val value = registry.getValue("hello")
+        assertEquals(requireNotNull(value), "world")
     }
 
     @Test
     fun getMissingKeyIsNull() {
-        val value = KeyRegistry.getValue("hello")
+        val value = registry.getValue("hello")
         assertNull(value)
     }
 }
