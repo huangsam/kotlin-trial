@@ -1,7 +1,7 @@
 package com.huangsam.registry
 
 object KeyRegistry {
-    private var mapping = HashMap<String, String>()
+    private var mapping: MutableMap<String, String> = mutableMapOf()
 
     fun getValue(key: String): String? {
         return mapping[key]
