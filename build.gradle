@@ -36,7 +36,8 @@ ktlint {
 }
 
 tasks.register('addHooks') {
-    exec {
-        commandLine('cp', '.hooks/pre-commit', '.git/hooks')
+    copy {
+        from '.hooks'
+        into '.git/hooks'
     }
 }
