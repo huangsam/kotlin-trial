@@ -17,7 +17,7 @@ class ApplePayTest {
 
     @Test
     fun paymentMethodShowsFine() {
-        assertEquals(applePay.method(), "Apple Incorporated")
+        assertEquals(applePay.company(), "Apple Incorporated")
     }
 
     @Test

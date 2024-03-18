@@ -1,5 +1,5 @@
 package com.huangsam.payment
 
 class ApplePay(override var balanceAmount: Int) : PayStrategy() {
-    override fun method(): String = "Apple Incorporated"
+    override fun company(): String = "Apple Incorporated"
 }
