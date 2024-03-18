@@ -24,6 +24,10 @@ kotlin {
     jvmToolchain(21)
 }
 
+/**
+ * Write build reports after running Detekt.
+ * https://detekt.dev/docs/gettingstarted/gradle/
+ */
 tasks.named("detekt").configure {
     reports {
         xml.required.set(true)
@@ -34,12 +38,16 @@ tasks.named("detekt").configure {
     }
 }
 
+/**
+ * Enable auto-correction for Kotlin code via Detekt.
+ * https://stackoverflow.com/q/57336354
+ */
 detekt {
     autoCorrect = true
 }
 
 /**
- * Followed these resources to get Detekt to run on each commit:
+ * Get Detekt to run on each commit.
  * https://detekt.dev/docs/gettingstarted/git-pre-commit-hook/
  * https://www.delasign.com/blog/android-studio-gradle-precommit-git-script/
  */
