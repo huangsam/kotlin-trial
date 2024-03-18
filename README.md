@@ -10,7 +10,7 @@ Load the project up in [Intellij IDEA](https://www.jetbrains.com/idea/).
 
 - https://kotlinlang.org/docs/home.html
 - https://www.w3schools.com/KOTLIN/index.php
-- https://kotlin.link/
-- https://detekt.dev/
+- https://github.com/KotlinBy/awesome-kotlin
+- https://github.com/akullpp/awesome-java
 - https://openjdk.org/
 - https://www.oracle.com/java/technologies/java-se-support-roadmap.html
