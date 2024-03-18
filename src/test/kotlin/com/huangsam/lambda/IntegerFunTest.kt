@@ -32,21 +32,21 @@ class IntegerFunTest {
     @Test
     fun scaleValuesWithZeroFactor() {
         val result = IntegerFun.scaleValues(oneToFour, 0)
-        assertTrue(result.all { it -> it == 0 })
+        assertTrue(result.all { it == 0 })
     }
 
     @ParameterizedTest
     @ValueSource(ints = [1, 5, 25, 125])
     fun scaleValuesWithPositiveFactor(factorValue: Int) {
         val result = IntegerFun.scaleValues(oneToFour, factorValue)
-        assertTrue(result.all { it -> it > 0 })
+        assertTrue(result.all { it > 0 })
     }
 
     @ParameterizedTest
     @ValueSource(ints = [-1, -3, -9, -27])
     fun scaleValuesWithNegativeFactor() {
         val result = IntegerFun.scaleValues(oneToFour, -3)
-        assertTrue(result.all { it -> it < 0 })
+        assertTrue(result.all { it < 0 })
     }
 
     @Test
