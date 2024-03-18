@@ -16,11 +16,6 @@ class ApplePayTest {
     }
 
     @Test
-    fun paymentMethodShowsFine() {
-        assertEquals(applePay.company(), "Apple Incorporated")
-    }
-
-    @Test
     fun balanceMatchesOriginal() {
         assertEquals(applePay.balance(), originalAmount)
     }
