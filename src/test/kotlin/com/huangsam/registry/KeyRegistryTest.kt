@@ -8,21 +8,32 @@ import org.junit.jupiter.api.Test
 class KeyRegistryTest {
     private val registry = KeyRegistry.getInstance()
 
+    private val hello = "hello"
+    private val world = "world"
+
     @BeforeEach
     fun beforeEach() {
         registry.clearValues()
     }
 
     @Test
-    fun registrySetAndGetWorks() {
-        registry.setValue("hello", "world")
-        val value = registry.getValue("hello")
-        assertEquals(requireNotNull(value), "world")
+    fun getWorldFromSetKey() {
+        registry.setValue(hello, world)
+        val value = registry.getValue(hello)
+        assertEquals(requireNotNull(value), world)
     }
 
     @Test
-    fun getMissingKeyIsNull() {
-        val value = registry.getValue("hello")
+    fun getNullFromEmptyKey() {
+        val value = registry.getValue(hello)
+        assertNull(value)
+    }
+
+    @Test
+    fun getNullFromClearedKey() {
+        registry.setValue(hello, world)
+        registry.clearValue(hello)
+        val value = registry.getValue(hello)
         assertNull(value)
     }
 }

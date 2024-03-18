@@ -3,9 +3,7 @@ package com.huangsam.registry
 class KeyRegistry {
     private var mapping: MutableMap<String, String> = mutableMapOf()
 
-    fun getValue(key: String): String? {
-        return mapping[key]
-    }
+    fun getValue(key: String): String? = mapping[key]
 
     fun setValue(
         key: String,
@@ -14,10 +12,18 @@ class KeyRegistry {
         mapping[key] = value
     }
 
-    fun clearValues() {
-        mapping = mutableMapOf()
+    fun clearValue(key: String) {
+        mapping.remove(key)
     }
 
+    fun clearValues() {
+        mapping.clear()
+    }
+
+    /**
+     * Singleton pattern
+     * https://www.baeldung.com/kotlin/singleton-classes
+     */
     companion object {
         @Volatile
         private var instance: KeyRegistry? = null
