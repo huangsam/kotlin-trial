@@ -13,16 +13,16 @@ class EngineerTest {
     private val engineer = Engineer(name)
 
     // https://stackoverflow.com/q/1119385
-    private val outContent = ByteArrayOutputStream()
+    private val contentOut = ByteArrayOutputStream()
     private val originalOut = System.out
 
     private fun assertContent(result: String) {
-        assertEquals(result, outContent.toString())
+        assertEquals(result, contentOut.toString())
     }
 
     @BeforeEach
     fun setUpStreams() {
-        System.setOut(PrintStream(outContent))
+        System.setOut(PrintStream(contentOut))
     }
 
     @AfterEach
