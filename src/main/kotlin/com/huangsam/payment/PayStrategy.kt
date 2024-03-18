@@ -31,9 +31,6 @@ abstract class PayStrategy : Payable {
             return when (method) {
                 PaymentMethod.GOOGLE -> GooglePay(balanceAmount)
                 PaymentMethod.APPLE -> ApplePay(balanceAmount)
-                else -> {
-                    throw UnsupportedOperationException("Method $method is not possible")
-                }
             }
         }
     }
