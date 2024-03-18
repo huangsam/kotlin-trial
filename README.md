@@ -21,6 +21,20 @@ After that, you can:
 
 Add [hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) to your local copy by running `./gradlew addHooks`.
 
+### Mockito warning
+
+A warning appeared while I integrated Mockito into this Kotlin project:
+
+```
+WARNING: A Java agent has been loaded dynamically (...)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+```
+
+It is discussed here in more detail: https://github.com/mockito/mockito/issues/3037
+
 ## Helpful resources
 
 - https://kotlinlang.org/docs/home.html
