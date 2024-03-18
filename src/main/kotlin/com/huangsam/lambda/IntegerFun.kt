@@ -1,6 +1,6 @@
 package com.huangsam.lambda
 
-object LambdaFun {
+object IntegerFun {
     fun filteredEvenCount(intList: List<Int>): Int {
         var evenCount = 0
         intList.filter { it % 2 == 0 }.forEach { _ ->
