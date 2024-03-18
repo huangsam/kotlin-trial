@@ -3,7 +3,7 @@ import Constants.ONE
 import Constants.TEN
 import com.huangsam.hello.Hello
 import com.huangsam.lambda.IntegerFun
-import com.huangsam.payment.PayStrategyAbstract
+import com.huangsam.payment.PayStrategy
 import com.huangsam.payment.PaymentMethod
 import com.huangsam.person.Engineer
 
@@ -24,7 +24,7 @@ fun demoLambda() {
 }
 
 fun demoPayment() {
-    val applePay = PayStrategyAbstract.createFromMethodName(PaymentMethod.APPLE)
+    val applePay = PayStrategy.createFromMethodName(PaymentMethod.APPLE)
     applePay.collectPaymentDetails()
     var successfulPaymentCount = 0
     while (applePay.pay(DEMO_PAYMENT_AMOUNT)) {
