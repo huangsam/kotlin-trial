@@ -1,5 +1,5 @@
-import Constants.ONE
 import Constants.DEMO_PAYMENT_AMOUNT
+import Constants.ONE
 import Constants.TEN
 import com.huangsam.hello.Hello
 import com.huangsam.lambda.IntegerFun
