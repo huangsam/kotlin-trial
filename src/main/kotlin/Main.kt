@@ -24,7 +24,7 @@ fun demoLambda() {
 }
 
 fun demoPayment() {
-    val applePay = PaymentMethod.createFromMethodName("apple", DEFAULT_BALANCE)
+    val applePay = PaymentMethod.createFromMethodName("apple")
     applePay.collectPaymentDetails()
     var successfulPaymentCount = 0
     while (applePay.pay(RANDOM_PAYMENT_AMOUNT)) {

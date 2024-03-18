@@ -1,5 +1,7 @@
 package com.huangsam.payment
 
+import Constants.DEFAULT_BALANCE
+
 abstract class PaymentMethod : PayStrategy {
     abstract var balanceAmount: Int
 
@@ -24,7 +26,7 @@ abstract class PaymentMethod : PayStrategy {
     companion object Factory {
         fun createFromMethodName(
             method: String,
-            balanceAmount: Int,
+            balanceAmount: Int = DEFAULT_BALANCE,
         ): PaymentMethod {
             return when (method.lowercase()) {
                 "google" -> GooglePay(balanceAmount)
