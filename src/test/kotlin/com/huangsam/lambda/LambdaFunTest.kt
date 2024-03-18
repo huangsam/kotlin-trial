@@ -48,4 +48,10 @@ class LambdaFunTest {
         val result = LambdaFun.scaleValues(oneToFour, -3)
         assertTrue(result.all { it -> it < 0 })
     }
+
+    @Test
+    fun sumOfSquaresIsCorrect() {
+        val result = LambdaFun.sumOfSquares(oneToFour)
+        assertEquals(result, 1 + 4 + 9 + 16)
+    }
 }

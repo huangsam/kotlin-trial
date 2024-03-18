@@ -11,4 +11,7 @@ object LambdaFun {
 
     fun scaleValues(intList: List<Int>, factor: Int): List<Int> =
         intList.map { it * factor }
+
+    fun sumOfSquares(intList: List<Int>): Int =
+        intList.fold(0) { acc, i -> acc + i * i }
 }
