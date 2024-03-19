@@ -23,7 +23,7 @@ Add [hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) to your lo
 
 ### Mockito warning
 
-A warning appeared while I integrated [Mockito](https://site.mockito.org/) into this Kotlin project:
+A warning appeared while integrating [Mockito](https://site.mockito.org/) into this Kotlin project:
 
 ```
 WARNING: A Java agent has been loaded dynamically (...)
