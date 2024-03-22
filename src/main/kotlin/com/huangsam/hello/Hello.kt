@@ -1,8 +1,7 @@
 package com.huangsam.hello
 
 class Hello {
-    private val helloString
-        get() = "Hello world"
+    private val helloString = "Hello world"
 
     fun say() {
         println(helloString)
