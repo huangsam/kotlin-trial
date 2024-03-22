@@ -5,11 +5,14 @@ import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.ValueSource
+import kotlin.random.Random
 
 class IntegerFunTest {
     private val oneToFour = (1..4).toList()
     private val allEven = (2..8 step 2).toList()
     private val allOdd = (1..7 step 2).toList()
+
+    private val randomInt = Random.nextInt()
 
     @Test
     fun filteredEvenCountMatchesAll() {
@@ -53,5 +56,20 @@ class IntegerFunTest {
     fun sumOfSquaresIsCorrect() {
         val result = IntegerFun.sumOfSquares(oneToFour)
         assertEquals(1 + 4 + 9 + 16, result)
+    }
+
+    @Test
+    fun evenCountLambdaMatchesFun() {
+        assertEquals(oneToFour.evenCount(), IntegerFun.filteredEvenCount(oneToFour))
+    }
+
+    @Test
+    fun scaleLambdaMatchesFun() {
+        assertEquals(oneToFour.scaleBy(randomInt), IntegerFun.scaleValues(oneToFour, randomInt))
+    }
+
+    @Test
+    fun sumSquareLambdaMatchesFun() {
+        assertEquals(oneToFour.sumSquares(), IntegerFun.sumOfSquares(oneToFour))
     }
 }
