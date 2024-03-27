@@ -33,7 +33,7 @@ class KeyRegistry {
         private var instance: KeyRegistry? = null
 
         fun getInstance() = instance ?: synchronized(this) {
-            instance ?: KeyRegistry().also { instance = it }
+            instance ?: KeyRegistry().apply { instance = this }
         }
     }
 }
