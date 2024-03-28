@@ -16,8 +16,7 @@ fun demoHello() {
     hello.say()
     hello.yell()
     hello.whisper()
-    hello.address("Sam")
-    hello.address("Jay")
+    hello.address("John Doe")
 }
 
 fun demoLambda() {
@@ -39,7 +38,7 @@ fun demoPayment() {
 }
 
 fun demoPerson() {
-    val engineer = Engineer("Chris")
+    val engineer = Engineer("Sam")
     engineer.run()
     engineer.walk()
     engineer.eat()

@@ -12,11 +12,11 @@ class Hello {
     }
 
     fun yell() {
-        logger.info(helloString.uppercase())
+        logger.warn(helloString.uppercase())
     }
 
     fun whisper() {
-        logger.info(helloString.lowercase())
+        logger.debug(helloString.lowercase())
     }
 
     fun address(name: String) {
