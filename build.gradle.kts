@@ -55,6 +55,8 @@ ktlint {
     }
 }
 
+// Instructions to register and configure a task
+// https://docs.gradle.org/current/userguide/more_about_tasks.html
 tasks.register<Copy>("addHooks") {
     group = "Help"
     description = "Adds Git hooks from .hooks to .git/hooks"
