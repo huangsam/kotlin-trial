@@ -9,7 +9,7 @@ abstract class PayStrategy : Payable {
 
     abstract fun company(): String
 
-    private val logger: Logger = LoggerFactory.getLogger(this::class.java.simpleName)
+    private val logger: Logger = LoggerFactory.getLogger(this::class.java)
 
     override fun pay(paymentAmount: Int): Boolean {
         if (paymentAmount > balanceAmount) return false
