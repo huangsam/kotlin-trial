@@ -44,11 +44,9 @@ ktlint {
     }
 }
 
-tasks.register("addHooks") {
+tasks.register<Copy>("addHooks") {
     group = "Help"
     description = "Adds Git hooks from .hooks to .git/hooks"
-    copy {
-        from(".hooks")
-        into(".git/hooks")
-    }
+    from(".hooks")
+    into(".git/hooks")
 }
