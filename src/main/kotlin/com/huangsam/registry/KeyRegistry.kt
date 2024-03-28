@@ -1,15 +1,10 @@
 package com.huangsam.registry
 
-import java.util.concurrent.ConcurrentHashMap
-import java.util.concurrent.ConcurrentMap
-
 class KeyRegistry {
-    private var mapping: ConcurrentMap<String, String> = ConcurrentHashMap()
+    private var mapping: MutableMap<String, String> = mutableMapOf()
 
-    @Synchronized
     fun getValue(key: String): String? = mapping[key]
 
-    @Synchronized
     fun setValue(
         key: String,
         value: String,
@@ -17,12 +12,10 @@ class KeyRegistry {
         mapping[key] = value
     }
 
-    @Synchronized
     fun clearValue(key: String) {
         mapping.remove(key)
     }
 
-    @Synchronized
     fun clearValues() {
         mapping.clear()
     }
@@ -32,8 +25,6 @@ class KeyRegistry {
         @Volatile
         private var instance: KeyRegistry? = null
 
-        fun getInstance() = instance ?: synchronized(this) {
-            instance ?: KeyRegistry().also { reg -> instance = reg }
-        }
+        fun getInstance() = instance ?: KeyRegistry().also { reg -> instance = reg }
     }
 }
