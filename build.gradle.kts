@@ -22,7 +22,7 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     testImplementation("org.junit.jupiter:junit-jupiter-params")
 
-    // Referenced here:
+    // Referenced here until Gradle 9.x is official
     // https://docs.gradle.org/8.3/userguide/upgrading_version_8.html
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
