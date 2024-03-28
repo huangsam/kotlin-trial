@@ -22,7 +22,6 @@ class KeyRegistry {
 
     // https://www.baeldung.com/kotlin/singleton-classes
     companion object Singleton {
-        @Volatile
         private var instance: KeyRegistry? = null
 
         fun getInstance() = instance ?: KeyRegistry().also { reg -> instance = reg }
