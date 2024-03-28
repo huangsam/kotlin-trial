@@ -6,6 +6,10 @@ import com.huangsam.lambda.IntegerFun
 import com.huangsam.payment.PayStrategy
 import com.huangsam.payment.PaymentMethod
 import com.huangsam.person.Engineer
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
+
+val logger: Logger = LoggerFactory.getLogger(Constants.MAIN)
 
 fun demoHello() {
     val hello = Hello()
@@ -20,7 +24,7 @@ fun demoLambda() {
     // listOf is different from toList - https://stackoverflow.com/q/66335870
     val ints = (ONE..TEN).toList()
     val evenCount = IntegerFun.filteredEvenCount(ints)
-    println("The list $ints has $evenCount even numbers")
+    logger.info("The list $ints has $evenCount even numbers")
 }
 
 fun demoPayment() {
@@ -30,8 +34,8 @@ fun demoPayment() {
     while (applePay.pay(DEMO_PAYMENT_AMOUNT)) {
         successfulPaymentCount += 1
     }
-    println("Paid for lunch $successfulPaymentCount times before having insufficient funds")
-    println("Remaining balance: ${applePay.balance()} dollars")
+    logger.info("Paid for lunch $successfulPaymentCount times before having insufficient funds")
+    logger.info("Remaining balance: ${applePay.balance()} dollars")
 }
 
 fun demoPerson() {
