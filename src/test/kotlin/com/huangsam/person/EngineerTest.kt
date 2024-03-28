@@ -1,61 +1,64 @@
 package com.huangsam.person
 
+import ch.qos.logback.classic.Logger
+import ch.qos.logback.classic.spi.ILoggingEvent
+import ch.qos.logback.core.read.ListAppender
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import java.io.ByteArrayOutputStream
-import java.io.PrintStream
+import org.slf4j.LoggerFactory
 
 class EngineerTest {
-    private val name = "John"
-    private val engineer = Engineer(name)
+    private val engineer = Engineer("John")
 
-    // https://stackoverflow.com/q/1119385
-    private val contentOut = ByteArrayOutputStream()
-    private val originalOut = System.out
+    private val logger = LoggerFactory.getLogger(Engineer::class.java) as Logger
+    private val appender = ListAppender<ILoggingEvent>()
 
-    private fun assertContent(result: String) {
-        assertEquals(contentOut.toString(), result)
+    private fun assertLastContent(result: String) {
+        assertEquals(appender.list.last().message, result)
     }
 
     @BeforeEach
-    fun setUpStreams() {
-        System.setOut(PrintStream(contentOut))
+    fun setupAppender() {
+        appender.start()
+        logger.addAppender(appender)
     }
 
     @AfterEach
-    fun restoreStreams() {
-        System.setOut(originalOut)
+    fun clearAppender() {
+        logger.detachAppender(appender)
+        appender.stop()
+        appender.list.clear()
     }
 
     @Test
     fun engineerCanCode() {
         engineer.code()
-        assertContent("$name is coding\n")
+        assertLastContent("${engineer.firstName} is coding")
     }
 
     @Test
     fun engineerCanRun() {
         engineer.run()
-        assertContent("$name is running\n")
+        assertLastContent("${engineer.firstName} is running")
     }
 
     @Test
     fun engineerCanWalk() {
         engineer.walk()
-        assertContent("$name is walking\n")
+        assertLastContent("${engineer.firstName} is walking")
     }
 
     @Test
     fun engineerCanEat() {
         engineer.eat()
-        assertContent("$name is eating\n")
+        assertLastContent("${engineer.firstName} is eating")
     }
 
     @Test
     fun engineerCanSleep() {
         engineer.sleep()
-        assertContent("$name is sleeping\n")
+        assertLastContent("${engineer.firstName} is sleeping")
     }
 }

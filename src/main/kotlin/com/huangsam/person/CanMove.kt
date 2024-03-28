@@ -1,5 +1,7 @@
 package com.huangsam.person
 
-interface CanWalk {
+interface CanMove {
     fun walk()
+
+    fun run()
 }

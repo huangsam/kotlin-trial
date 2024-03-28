@@ -1,5 +1,7 @@
 package com.huangsam.person
 
-interface CanEat {
+interface CanLive {
     fun eat()
+
+    fun sleep()
 }
