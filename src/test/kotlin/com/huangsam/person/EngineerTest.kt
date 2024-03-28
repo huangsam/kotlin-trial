@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory
 class EngineerTest {
     private val engineer = Engineer("John")
 
-    // https://stackoverflow.com/a/52229629
+    // Logback testing - https://stackoverflow.com/a/52229629
     private val logger = LoggerFactory.getLogger(Engineer::class.java) as Logger
     private val appender = ListAppender<ILoggingEvent>()
 
