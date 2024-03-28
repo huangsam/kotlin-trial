@@ -1,11 +1,15 @@
 package com.huangsam.payment
 
 import Constants.DEFAULT_BALANCE
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 
 abstract class PayStrategy : Payable {
     abstract var balanceAmount: Int
 
     abstract fun company(): String
+
+    private val logger: Logger = LoggerFactory.getLogger(this::class.java.simpleName)
 
     override fun pay(paymentAmount: Int): Boolean {
         if (paymentAmount > balanceAmount) return false
@@ -14,7 +18,7 @@ abstract class PayStrategy : Payable {
     }
 
     override fun collectPaymentDetails() {
-        println("Payments are made via ${company()}")
+        logger.info("Payments are made via ${company()}")
     }
 
     fun balance(): Int {

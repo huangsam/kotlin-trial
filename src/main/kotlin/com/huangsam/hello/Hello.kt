@@ -1,21 +1,25 @@
 package com.huangsam.hello
 
+import org.slf4j.LoggerFactory
+
 class Hello {
+    private val logger = LoggerFactory.getLogger(this::class.java)
+
     private val helloString = "Hello world"
 
     fun say() {
-        println(helloString)
+        logger.info(helloString)
     }
 
     fun yell() {
-        println(helloString.uppercase())
+        logger.info(helloString.uppercase())
     }
 
     fun whisper() {
-        println(helloString.lowercase())
+        logger.info(helloString.lowercase())
     }
 
     fun address(name: String) {
-        println("$helloString $name")
+        logger.info("$helloString $name")
     }
 }
