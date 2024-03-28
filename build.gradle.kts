@@ -46,7 +46,7 @@ ktlint {
 
 tasks.register("addHooks") {
     group = "Help"
-    description = "Install Git hooks from .hooks to local .git"
+    description = "Adds Git hooks from .hooks to .git/hooks"
     copy {
         from(".hooks")
         into(".git/hooks")
