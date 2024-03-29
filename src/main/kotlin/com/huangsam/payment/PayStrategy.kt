@@ -1,8 +1,9 @@
 package com.huangsam.payment
 
-import Constants.DEFAULT_BALANCE
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+
+private const val DEFAULT_BALANCE = 100
 
 abstract class PayStrategy : Payable {
     abstract var balanceAmount: Int

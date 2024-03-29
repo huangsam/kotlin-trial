@@ -1,6 +1,3 @@
-import Constants.DEMO_PAYMENT_AMOUNT
-import Constants.ONE
-import Constants.TEN
 import com.huangsam.hello.Hello
 import com.huangsam.lambda.IntegerFun
 import com.huangsam.payment.PayStrategy
@@ -9,7 +6,12 @@ import com.huangsam.person.Engineer
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
-val logger: Logger = LoggerFactory.getLogger(Constants.MAIN)
+private const val MAIN = "main"
+private const val ONE = 1
+private const val TEN = 10
+private const val DEMO_PAYMENT_AMOUNT = 30
+
+val logger: Logger = LoggerFactory.getLogger(MAIN)
 
 fun demoHello() {
     val hello = Hello()
