@@ -66,6 +66,7 @@ class IntegerFunTest {
 
     @Test
     fun scaleLambdaMatchesFun() {
+        // Repeat assertion on random factor to ensure correctness
         // https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/repeat.html
         repeat(times = 10) {
             val factor = randomInt
