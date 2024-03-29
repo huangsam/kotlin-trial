@@ -12,7 +12,8 @@ class IntegerFunTest {
     private val allEven = (2..8 step 2).toList()
     private val allOdd = (1..7 step 2).toList()
 
-    private val randomInt = Random.nextInt()
+    private val randomInt
+        get() = Random.nextInt()
 
     @Test
     fun filteredEvenCountMatchesAll() {
@@ -65,7 +66,10 @@ class IntegerFunTest {
 
     @Test
     fun scaleLambdaMatchesFun() {
-        assertEquals(oneToFour.scaleBy(randomInt), IntegerFun.scaleValues(oneToFour, randomInt))
+        repeat(times = 10) {
+            val factor = randomInt
+            assertEquals(oneToFour.scaleBy(factor), IntegerFun.scaleValues(oneToFour, factor))
+        }
     }
 
     @Test

@@ -5,11 +5,11 @@ import org.junit.jupiter.api.Assertions.assertNull
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 
+private const val HELLO = "HELLO"
+private const val WORLD = "WORLD"
+
 class KeyRegistryTest {
     private val registry = KeyRegistry.getInstance()
-
-    private val hello = "hello"
-    private val world = "world"
 
     @BeforeEach
     fun beforeEach() {
@@ -18,22 +18,22 @@ class KeyRegistryTest {
 
     @Test
     fun getWorldFromSetKey() {
-        registry.setValue(hello, world)
-        val value = registry.getValue(hello)
-        assertEquals(world, requireNotNull(value))
+        registry.setValue(HELLO, WORLD)
+        val value = registry.getValue(HELLO)
+        assertEquals(WORLD, requireNotNull(value))
     }
 
     @Test
     fun getNullFromEmptyKey() {
-        val value = registry.getValue(hello)
+        val value = registry.getValue(HELLO)
         assertNull(value)
     }
 
     @Test
     fun getNullFromClearedKey() {
-        registry.setValue(hello, world)
-        registry.clearValue(hello)
-        val value = registry.getValue(hello)
+        registry.setValue(HELLO, WORLD)
+        registry.clearValue(HELLO)
+        val value = registry.getValue(HELLO)
         assertNull(value)
     }
 }

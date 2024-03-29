@@ -6,18 +6,19 @@ import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 
+private const val START_AMOUNT = 100
+
 class ApplePayTest {
-    private val originalAmount = 100
-    private var applePay = ApplePay(originalAmount)
+    private var applePay = ApplePay(START_AMOUNT)
 
     @BeforeEach
     fun beforeEach() {
-        applePay = ApplePay(originalAmount)
+        applePay = ApplePay(START_AMOUNT)
     }
 
     @Test
     fun balanceMatchesOriginal() {
-        assertEquals(originalAmount, applePay.balance())
+        assertEquals(START_AMOUNT, applePay.balance())
     }
 
     @Test
@@ -27,11 +28,11 @@ class ApplePayTest {
 
     @Test
     fun payExactSuccess() {
-        assertTrue(applePay.pay(originalAmount))
+        assertTrue(applePay.pay(START_AMOUNT))
     }
 
     @Test
     fun payOverFailure() {
-        assertFalse(applePay.pay(originalAmount + 1))
+        assertFalse(applePay.pay(START_AMOUNT + 1))
     }
 }
