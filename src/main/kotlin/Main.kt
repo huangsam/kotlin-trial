@@ -6,12 +6,11 @@ import com.huangsam.person.Engineer
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
-private const val MAIN = "main"
 private const val ONE = 1
 private const val TEN = 10
 private const val DEMO_PAYMENT_AMOUNT = 30
 
-val logger: Logger = LoggerFactory.getLogger(MAIN)
+val logger: Logger = LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME)
 
 fun demoHello() {
     val hello = Hello()
