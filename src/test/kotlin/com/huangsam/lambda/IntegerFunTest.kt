@@ -66,6 +66,7 @@ class IntegerFunTest {
 
     @Test
     fun scaleLambdaMatchesFun() {
+        // https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/repeat.html
         repeat(times = 10) {
             val factor = randomInt
             assertEquals(oneToFour.scaleBy(factor), IntegerFun.scaleValues(oneToFour, factor))
