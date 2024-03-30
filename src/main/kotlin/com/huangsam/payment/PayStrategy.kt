@@ -10,17 +10,17 @@ abstract class PayStrategy(private var balance: Int) : Payable {
 
     private val logger: Logger = LoggerFactory.getLogger(this::class.java)
 
-    fun getBalance(): Int {
-        return balance
-    }
-
     override fun makePayment(paymentAmount: Int): Boolean {
         if (paymentAmount > balance) return false
         balance -= paymentAmount
         return true
     }
 
-    override fun displayProvider() {
+    fun getBalance(): Int {
+        return balance
+    }
+
+    fun displayInfo() {
         logger.info("Payments are made via $company")
     }
 
