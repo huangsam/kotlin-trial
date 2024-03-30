@@ -30,11 +30,11 @@ fun demoLambda() {
 fun demoPayment() {
     val applePay = PayStrategy.create(PaymentMethod.APPLE)
     applePay.displayInfo()
-    var successfulPaymentCount = 0
+    var paymentCount = 0
     while (applePay.makePayment(DEMO_PAYMENT_AMOUNT)) {
-        successfulPaymentCount += 1
+        paymentCount += 1
     }
-    logger.info("Paid for lunch $successfulPaymentCount times before having insufficient funds")
+    logger.info("Made $paymentCount payments until balance was low")
     logger.info("Remaining balance: ${applePay.getBalance()} dollars")
 }
 
