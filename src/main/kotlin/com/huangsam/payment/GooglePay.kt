@@ -1,5 +1,5 @@
 package com.huangsam.payment
 
-class GooglePay(override var balanceAmount: Int) : PayStrategy() {
-    override fun company(): String = "Google LLC"
+class GooglePay(balance: Int) : PayStrategy(balance) {
+    override val company: String = "Google LLC"
 }

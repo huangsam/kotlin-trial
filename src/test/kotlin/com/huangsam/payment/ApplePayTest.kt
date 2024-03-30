@@ -12,27 +12,27 @@ class ApplePayTest {
     private var applePay = ApplePay(START_AMOUNT)
 
     @BeforeEach
-    fun beforeEach() {
+    fun resetApplePay() {
         applePay = ApplePay(START_AMOUNT)
     }
 
     @Test
     fun balanceMatchesOriginal() {
-        assertEquals(START_AMOUNT, applePay.balance())
+        assertEquals(START_AMOUNT, applePay.getBalance())
     }
 
     @Test
     fun payUnderSuccess() {
-        assertTrue(applePay.pay(10))
+        assertTrue(applePay.makePayment(10))
     }
 
     @Test
     fun payExactSuccess() {
-        assertTrue(applePay.pay(START_AMOUNT))
+        assertTrue(applePay.makePayment(START_AMOUNT))
     }
 
     @Test
     fun payOverFailure() {
-        assertFalse(applePay.pay(START_AMOUNT + 1))
+        assertFalse(applePay.makePayment(START_AMOUNT + 1))
     }
 }
