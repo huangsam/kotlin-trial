@@ -23,6 +23,9 @@ dependencies {
     implementation("org.slf4j:slf4j-api:2.0.12")
     implementation("ch.qos.logback:logback-classic:1.5.3")
 
+    // https://github.com/google/gson/tree/main
+    implementation("com.google.code.gson:gson:2.10.1")
+
     // https://www.baeldung.com/mockito-junit-5-extension
     testImplementation("org.mockito:mockito-core:5.11.0")
     testImplementation("org.mockito:mockito-junit-jupiter:5.11.0")
