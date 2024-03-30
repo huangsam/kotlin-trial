@@ -10,7 +10,7 @@ private const val ONE = 1
 private const val TEN = 10
 private const val DEMO_PAYMENT_AMOUNT = 30
 
-val logger: Logger = LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME)
+private val logger: Logger = LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME)
 
 fun demoHello() {
     val hello = Hello()
