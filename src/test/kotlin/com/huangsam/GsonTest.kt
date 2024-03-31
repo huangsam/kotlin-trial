@@ -4,11 +4,14 @@ import com.google.gson.Gson
 import com.huangsam.person.Engineer
 import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
+
+private fun Engineer.toJson(gson: Gson): String = gson.toJson(this)
 
 class GsonTest {
     private val gson = Gson()
+
+    private val joe = Engineer("Jason", 24)
 
     @Test
     fun tryPrimitivesSerialization() {
@@ -31,13 +34,13 @@ class GsonTest {
 
     @Test
     fun tryObjectSerialization() {
-        assertEquals("""{"name":"Joe","age":21}""", gson.toJson(Engineer("Joe", 21)))
+        assertEquals("""{"name":"Jason","age":24}""", joe.toJson(gson))
     }
 
     @Test
     fun tryObjectDeserialization() {
-        val person = gson.fromJson("""{"name":"Joe","age":21}""", Engineer::class.java)
-        assertEquals("Joe", person.name)
-        assertTrue(person.isReadyToVote())
+        val person = gson.fromJson(joe.toJson(gson), Engineer::class.java)
+        assertEquals(joe.name, person.name)
+        assertEquals(joe.isReadyToVote(), person.isReadyToVote())
     }
 }
