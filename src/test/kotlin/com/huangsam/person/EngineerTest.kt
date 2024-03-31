@@ -37,31 +37,31 @@ class EngineerTest {
     }
 
     @Test
-    fun engineerCanCode() {
+    fun engineerCodeWithLog() {
         john.code()
         assertLastContent("${john.name} is coding")
     }
 
     @Test
-    fun engineerCanRun() {
+    fun engineerRunWithLog() {
         john.run()
         assertLastContent("${john.name} is running")
     }
 
     @Test
-    fun engineerCanWalk() {
+    fun engineerWalkWithLog() {
         john.walk()
         assertLastContent("${john.name} is walking")
     }
 
     @Test
-    fun engineerCanEat() {
+    fun engineerEatWithLog() {
         john.eat()
         assertLastContent("${john.name} is eating")
     }
 
     @Test
-    fun engineerCanSleep() {
+    fun engineerSleepWithLog() {
         john.sleep()
         assertLastContent("${john.name} is sleeping")
     }
