@@ -25,7 +25,10 @@ abstract class PayStrategy(private var balance: Int) : Payable {
     }
 
     companion object Factory {
-        fun create(method: PaymentMethod, balance: Int = DEFAULT_BALANCE): PayStrategy {
+        fun create(
+            method: PaymentMethod,
+            balance: Int = DEFAULT_BALANCE,
+        ): PayStrategy {
             return when (method) {
                 PaymentMethod.APPLE -> ApplePay(balance)
                 PaymentMethod.GOOGLE -> GooglePay(balance)
