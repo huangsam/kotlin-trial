@@ -1,9 +1,9 @@
 package com.huangsam
 
 import com.google.gson.Gson
-import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Assertions.assertArrayEquals
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import kotlin.test.assertEquals
 
 class GsonTest {
     private val gson = Gson()
@@ -24,6 +24,6 @@ class GsonTest {
 
         // Compare arrays with JUnit 5 - https://stackoverflow.com/a/68054311
         val parsedArray: Array<Int> = gson.fromJson("[1,2,3]", Array<Int>::class.java)
-        Assertions.assertArrayEquals(arrayOf(1, 2, 3), parsedArray)
+        assertArrayEquals(arrayOf(1, 2, 3), parsedArray)
     }
 }
