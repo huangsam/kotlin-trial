@@ -9,9 +9,7 @@ fun List<Int>.sumSquares(): Int = this.fold(0) { acc, i -> acc + i * i }
 object IntegerFun {
     fun filteredEvenCount(list: List<Int>): Int {
         var count = 0
-        for (num in list) {
-            if (num % 2 == 0) count += 1
-        }
+        list.map { if (it % 2 == 0) count += 1 }
         return count
     }
 
@@ -20,17 +18,13 @@ object IntegerFun {
         factor: Int,
     ): List<Int> {
         val transform: MutableList<Int> = mutableListOf()
-        for (num in list) {
-            transform.add(num * factor)
-        }
+        list.map { transform.add(it * factor) }
         return transform
     }
 
     fun sumOfSquares(list: List<Int>): Int {
         var sum = 0
-        for (num in list) {
-            sum += num * num
-        }
+        list.map { sum += it * it }
         return sum
     }
 }
