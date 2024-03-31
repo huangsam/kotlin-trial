@@ -1,5 +1,5 @@
 package com.huangsam.person
 
-class Engineer(firstName: String) : Person(firstName) {
-    fun code() = logger.info("${this.firstName} is coding")
+class Engineer(name: String, age: Int) : Person(name, age) {
+    fun code() = logger.info("${this.name} is coding")
 }

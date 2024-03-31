@@ -39,7 +39,8 @@ fun demoPayment() {
 }
 
 fun demoPerson() {
-    val engineer = Engineer("Sam")
+    val engineer = Engineer("Sam", 20)
+    logger.info("Is ${engineer.name} able to vote? ${engineer.isReadyToVote()}")
     engineer.run()
     engineer.walk()
     engineer.eat()
