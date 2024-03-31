@@ -4,6 +4,7 @@ import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
 abstract class Person(val name: String, private val age: Int) : CanMove, CanLive {
+    @Transient
     protected val logger: Logger = LoggerFactory.getLogger(this::class.java)
 
     override fun walk() = logger.warn("${this.name} is walking")

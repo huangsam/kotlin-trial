@@ -1,8 +1,10 @@
 package com.huangsam
 
 import com.google.gson.Gson
+import com.huangsam.person.Engineer
 import org.junit.jupiter.api.Assertions.assertArrayEquals
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
 class GsonTest {
@@ -25,5 +27,17 @@ class GsonTest {
         // Compare arrays with JUnit 5 - https://stackoverflow.com/a/68054311
         val parsedArray: Array<Int> = gson.fromJson("[1,2,3]", Array<Int>::class.java)
         assertArrayEquals(arrayOf(1, 2, 3), parsedArray)
+    }
+
+    @Test
+    fun tryObjectSerialization() {
+        assertEquals("""{"name":"Joe","age":21}""", gson.toJson(Engineer("Joe", 21)))
+    }
+
+    @Test
+    fun tryObjectDeserialization() {
+        val person = gson.fromJson("""{"name":"Joe","age":21}""", Engineer::class.java)
+        assertEquals("Joe", person.name)
+        assertTrue(person.isReadyToVote())
     }
 }
