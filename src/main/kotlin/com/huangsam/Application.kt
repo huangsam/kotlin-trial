@@ -1,3 +1,5 @@
+package com.huangsam
+
 import com.huangsam.concurrency.helloWorldWithDelay
 import com.huangsam.concurrency.numbersWithDelay
 import com.huangsam.hello.Hello
@@ -66,10 +68,13 @@ fun demoPerson() {
     engineer.work()
 }
 
-fun main() {
-    demoHello()
-    demoLambda()
-    demoPayment()
-    demoPerson()
-    demoCoroutines()
+object Application {
+    @JvmStatic
+    fun main(args: Array<String>) {
+        demoHello()
+        demoLambda()
+        demoPayment()
+        demoPerson()
+        demoCoroutines()
+    }
 }

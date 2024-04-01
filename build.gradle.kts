@@ -8,6 +8,9 @@ plugins {
 
     // https://github.com/ben-manes/gradle-versions-plugin
     id("com.github.ben-manes.versions") version "0.51.0"
+
+    // https://docs.gradle.org/current/userguide/application_plugin.html
+    application
 }
 
 group = "com.huangsam"
@@ -50,6 +53,10 @@ tasks.named<Test>("test") {
 
 kotlin {
     jvmToolchain(21)
+}
+
+application {
+    mainClass = "com.huangsam.Application"
 }
 
 ktlint {
