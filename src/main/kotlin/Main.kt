@@ -24,9 +24,9 @@ fun demoHello() {
 
 fun demoLambda() {
     // listOf versus toList - https://stackoverflow.com/q/66335870
-    val ints = (ONE..TEN).toList()
-    val evenCount = IntegerFun.filteredEvenCount(ints)
-    logger.info("The list $ints has $evenCount even numbers")
+    val integers = (ONE..TEN).toList()
+    val evenCount = IntegerFun.filteredEvenCount(integers)
+    logger.info("The list $integers has $evenCount even numbers")
 }
 
 fun demoPayment() {
