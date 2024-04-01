@@ -11,7 +11,7 @@ private fun Engineer.toJson(gson: Gson): String = gson.toJson(this)
 class GsonTest {
     private val gson = Gson()
 
-    private val joe = Engineer("Jason", 24, listOf("Google ML"))
+    private val joe = Engineer("Jason", 24)
 
     @Test
     fun tryPrimitivesSerialization() {
@@ -34,7 +34,10 @@ class GsonTest {
 
     @Test
     fun tryObjectSerialization() {
-        assertEquals("""{"certifications":["Google ML"],"name":"Jason","age":24}""", joe.toJson(gson))
+        assertEquals(
+            """{"certifications":[],"qualifications":[],"name":"Jason","age":24}""",
+            joe.toJson(gson),
+        )
     }
 
     @Test

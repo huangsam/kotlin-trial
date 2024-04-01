@@ -12,9 +12,9 @@ import org.junit.jupiter.api.Test
 import org.slf4j.LoggerFactory
 
 class EngineerTest {
-    private val john = Engineer("John", 26, listOf("Stanford", "Yale"))
-    private val mary = Engineer("Mary", 18, listOf())
-    private val jack = Engineer("Jack", 16, listOf())
+    private val john = Engineer("John", 26, certifications = listOf("Stanford", "Yale"))
+    private val mary = Engineer("Mary", 18, qualifications = listOf("Coding Dojo"))
+    private val jack = Engineer("Jack", 16)
 
     // Logback testing - https://stackoverflow.com/a/52229629
     private val logger = LoggerFactory.getLogger(Engineer::class.java) as Logger
@@ -79,19 +79,18 @@ class EngineerTest {
     }
 
     @Test
-    fun engineerIsCertified() {
-        assertTrue(john.isCertified())
+    fun engineerIsTrusted() {
+        assertTrue(john.isTrusted())
+        assertTrue(mary.isTrusted())
     }
 
     @Test
-    fun engineerIsNotCertified() {
-        assertFalse(mary.isCertified())
-        assertFalse(jack.isCertified())
+    fun engineerIsNotTrusted() {
+        assertFalse(jack.isTrusted())
     }
 
     @Test
     fun engineerIsIntern() {
-        assertTrue(mary.isIntern())
         assertTrue(jack.isIntern())
     }
 }

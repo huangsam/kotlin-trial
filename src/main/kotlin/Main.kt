@@ -40,9 +40,15 @@ fun demoPayment() {
 }
 
 fun demoPerson() {
-    val engineer = Engineer("Sam", 25, listOf("UC Davis"))
+    val engineer =
+        Engineer(
+            "Sam",
+            30,
+            certifications = listOf("AWS on Udemy", "GCP on Coursera"),
+            qualifications = listOf("UC Davis"),
+        )
     logger.info("Is ${engineer.name} able to vote? ${engineer.isReadyToVote()}")
-    logger.info("Is ${engineer.name} certified? ${engineer.isCertified()}")
+    logger.info("Is ${engineer.name} certified? ${engineer.isTrusted()}")
     logger.info("Is ${engineer.name} an intern? ${engineer.isIntern()}")
     engineer.run()
     engineer.walk()
