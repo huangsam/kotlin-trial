@@ -1,5 +1,8 @@
 package com.huangsam.lambda
 
+// Great explanations on Kotlin receivers
+// https://stackoverflow.com/a/68505794/2748860
+// https://stackoverflow.com/a/45875492/2748860
 fun List<Int>.evenCount(): Int = this.filter { it % 2 == 0 }.fold(0) { acc, _ -> acc + 1 }
 
 fun List<Int>.scaleBy(factor: Int): List<Int> = this.map { it * factor }
