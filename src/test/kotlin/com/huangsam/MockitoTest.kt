@@ -13,6 +13,12 @@ import org.mockito.kotlin.times
 import org.mockito.kotlin.verify
 import org.mockito.kotlin.whenever
 
+private const val ONE = 1
+private const val TWO = 2
+private const val THREE = 3
+private const val FOUR = 4
+private const val TWO_HUNDRED = 200
+
 @ExtendWith(MockitoExtension::class)
 class MockitoTest {
     @Mock
@@ -20,12 +26,6 @@ class MockitoTest {
 
     @Spy
     private var spyList: MutableList<Int> = mutableListOf()
-
-    private val one = 1
-    private val two = 2
-    private val three = 3
-    private val four = 4
-    private val twoHundred = 200
 
     @BeforeEach
     fun resetMockitoAssets() {
@@ -35,37 +35,37 @@ class MockitoTest {
 
     @Test
     fun checkAddCountWithMockedList() {
-        mockedList.add(one)
-        verify(mockedList).add(one)
+        mockedList.add(ONE)
+        verify(mockedList).add(ONE)
         assertEquals(0, mockedList.count())
-        whenever(mockedList.count()).thenReturn(twoHundred)
-        assertEquals(twoHundred, mockedList.count())
+        whenever(mockedList.count()).thenReturn(TWO_HUNDRED)
+        assertEquals(TWO_HUNDRED, mockedList.count())
     }
 
     @Test
     fun checkAddCountWithSpyList() {
-        spyList.add(one)
-        spyList.add(two)
-        verify(spyList).add(one)
-        verify(spyList).add(two)
+        spyList.add(ONE)
+        spyList.add(TWO)
+        verify(spyList).add(ONE)
+        verify(spyList).add(TWO)
         assertEquals(2, spyList.count())
-        whenever(mockedList.count()).thenReturn(twoHundred)
-        assertEquals(twoHundred, mockedList.count())
+        whenever(mockedList.count()).thenReturn(TWO_HUNDRED)
+        assertEquals(TWO_HUNDRED, mockedList.count())
     }
 
     @Test
     fun checkAddWithArgumentCaptor() {
         val captor = argumentCaptor<Int>()
-        mockedList.add(one)
-        mockedList.add(two)
-        mockedList.add(three)
-        mockedList.add(four)
+        mockedList.add(ONE)
+        mockedList.add(TWO)
+        mockedList.add(THREE)
+        mockedList.add(FOUR)
         captor.apply {
-            verify(mockedList, times(four)).add(capture())
-            assertEquals(one, firstValue)
-            assertEquals(two, secondValue)
-            assertEquals(three, thirdValue)
-            assertEquals(four, lastValue)
+            verify(mockedList, times(FOUR)).add(capture())
+            assertEquals(ONE, firstValue)
+            assertEquals(TWO, secondValue)
+            assertEquals(THREE, thirdValue)
+            assertEquals(FOUR, lastValue)
         }
     }
 }
