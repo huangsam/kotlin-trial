@@ -1,12 +1,10 @@
+import com.huangsam.concurrency.helloWorldWithDelay
 import com.huangsam.hello.Hello
 import com.huangsam.lambda.IntegerFun
 import com.huangsam.payment.PayStrategy
 import com.huangsam.payment.PaymentMethod
 import com.huangsam.person.Engineer
 import com.huangsam.person.isIntern
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
@@ -43,16 +41,7 @@ fun demoPayment() {
     logger.info("Remaining balance: ${applePay.getBalance()} dollars")
 }
 
-// Described in great detail here
-// https://kotlinlang.org/docs/coroutines-basics.html
-fun demoCoroutines() =
-    runBlocking {
-        launch {
-            delay(250L)
-            logger.info("World")
-        }
-        logger.info("Hello")
-    }
+fun demoCoroutines() = helloWorldWithDelay()
 
 fun demoPerson() {
     val engineer =
