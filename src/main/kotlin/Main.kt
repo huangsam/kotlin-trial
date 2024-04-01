@@ -3,6 +3,7 @@ import com.huangsam.lambda.IntegerFun
 import com.huangsam.payment.PayStrategy
 import com.huangsam.payment.PaymentMethod
 import com.huangsam.person.Engineer
+import com.huangsam.person.isIntern
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
@@ -39,13 +40,15 @@ fun demoPayment() {
 }
 
 fun demoPerson() {
-    val engineer = Engineer("Sam", 20)
+    val engineer = Engineer("Sam", 20, listOf("UC Davis"))
     logger.info("Is ${engineer.name} able to vote? ${engineer.isReadyToVote()}")
+    logger.info("Is ${engineer.name} certified? ${engineer.isCertified()}")
+    logger.info("Is ${engineer.name} an intern? ${engineer.isIntern()}")
     engineer.run()
     engineer.walk()
     engineer.eat()
     engineer.sleep()
-    engineer.code()
+    engineer.work()
 }
 
 fun main() {
