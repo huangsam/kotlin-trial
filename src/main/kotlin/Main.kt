@@ -43,6 +43,8 @@ fun demoPayment() {
     logger.info("Remaining balance: ${applePay.getBalance()} dollars")
 }
 
+// Described in great detail here
+// https://kotlinlang.org/docs/coroutines-basics.html
 fun demoCoroutines() =
     runBlocking {
         launch {
