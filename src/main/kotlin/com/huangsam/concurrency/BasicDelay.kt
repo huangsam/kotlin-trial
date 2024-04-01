@@ -8,8 +8,7 @@ import org.slf4j.LoggerFactory
 
 private val logger: Logger = LoggerFactory.getLogger("BasicDelay")
 
-// Described in great detail here
-// https://kotlinlang.org/docs/coroutines-basics.html
+// https://kotlinlang.org/docs/coroutines-basics.html#your-first-coroutine
 suspend fun helloWorldWithDelay() =
     coroutineScope {
         launch {
@@ -19,6 +18,7 @@ suspend fun helloWorldWithDelay() =
         logger.info("Hello")
     }
 
+// https://kotlinlang.org/docs/coroutines-basics.html#coroutines-are-light-weight
 suspend fun numbersWithDelay() =
     coroutineScope {
         repeat(5) {
