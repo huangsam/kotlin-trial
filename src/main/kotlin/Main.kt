@@ -1,4 +1,5 @@
 import com.huangsam.concurrency.helloWorldWithDelay
+import com.huangsam.concurrency.numbersWithDelay
 import com.huangsam.hello.Hello
 import com.huangsam.lambda.IntegerFun
 import com.huangsam.payment.PayStrategy
@@ -45,6 +46,7 @@ fun demoPayment() {
 fun demoCoroutines() =
     runBlocking {
         helloWorldWithDelay()
+        numbersWithDelay()
     }
 
 fun demoPerson() {
