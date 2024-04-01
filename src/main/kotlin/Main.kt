@@ -45,8 +45,7 @@ fun demoPerson() {
         Engineer(
             "Sam",
             AGE_OF_ADULTHOOD,
-            certifications = listOf("AWS on Udemy", "GCP on Coursera"),
-            qualifications = listOf("UC Davis"),
+            certifications = listOf("UC Davis", "AWS on Udemy", "GCP on Coursera"),
         )
     logger.info("Is ${engineer.name} able to vote? ${engineer.isReadyToVote()}")
     logger.info("Is ${engineer.name} certified? ${engineer.isTrusted()}")

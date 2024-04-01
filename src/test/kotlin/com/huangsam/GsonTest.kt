@@ -35,7 +35,7 @@ class GsonTest {
     @Test
     fun tryObjectSerialization() {
         assertEquals(
-            """{"certifications":[],"qualifications":[],"name":"Jason","age":24}""",
+            """{"certifications":[],"name":"Jason","age":24}""",
             joe.toJson(gson),
         )
     }

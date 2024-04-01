@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory
 
 class EngineerTest {
     private val john = Engineer("John", 26, certifications = listOf("Stanford", "Yale"))
-    private val mary = Engineer("Mary", 18, qualifications = listOf("Coding Dojo"))
+    private val mary = Engineer("Mary", 18, certifications = listOf("Coding Dojo"))
     private val jack = Engineer("Jack", 16)
 
     // Logback testing - https://stackoverflow.com/a/52229629
