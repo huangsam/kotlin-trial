@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory
 
 private const val ONE = 1
 private const val TEN = 10
+private const val AGE_OF_ADULTHOOD = 25
 private const val DEMO_PAYMENT_AMOUNT = 30
 
 private val logger: Logger = LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME)
@@ -43,7 +44,7 @@ fun demoPerson() {
     val engineer =
         Engineer(
             "Sam",
-            30,
+            AGE_OF_ADULTHOOD,
             certifications = listOf("AWS on Udemy", "GCP on Coursera"),
             qualifications = listOf("UC Davis"),
         )
