@@ -23,6 +23,9 @@ dependencies {
     implementation("org.slf4j:slf4j-api:2.0.12")
     implementation("ch.qos.logback:logback-classic:1.5.3")
 
+    // https://github.com/Kotlin/kotlinx.coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
+
     // https://github.com/google/gson/tree/main
     implementation("com.google.code.gson:gson:2.10.1")
 

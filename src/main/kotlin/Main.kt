@@ -4,6 +4,9 @@ import com.huangsam.payment.PayStrategy
 import com.huangsam.payment.PaymentMethod
 import com.huangsam.person.Engineer
 import com.huangsam.person.isIntern
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
@@ -40,6 +43,15 @@ fun demoPayment() {
     logger.info("Remaining balance: ${applePay.getBalance()} dollars")
 }
 
+fun demoCoroutines() =
+    runBlocking {
+        launch {
+            delay(250L)
+            logger.info("World")
+        }
+        logger.info("Hello")
+    }
+
 fun demoPerson() {
     val engineer =
         Engineer(
@@ -62,4 +74,5 @@ fun main() {
     demoLambda()
     demoPayment()
     demoPerson()
+    demoCoroutines()
 }
