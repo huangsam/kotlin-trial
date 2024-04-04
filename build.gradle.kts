@@ -11,6 +11,9 @@ plugins {
 
     // https://docs.gradle.org/current/userguide/application_plugin.html
     application
+
+    // https://docs.gradle.org/current/userguide/jacoco_plugin.html
+    jacoco
 }
 
 group = "com.huangsam"
@@ -57,6 +60,10 @@ kotlin {
 
 application {
     mainClass = "com.huangsam.Application"
+}
+
+jacoco {
+    toolVersion = "0.8.11"
 }
 
 ktlint {
