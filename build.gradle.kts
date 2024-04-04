@@ -50,16 +50,20 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
-tasks.named<Test>("test") {
-    useJUnitPlatform()
-}
-
 kotlin {
     jvmToolchain(21)
 }
 
 application {
     mainClass = "com.huangsam.Application"
+}
+
+tasks.named<Test>("test") {
+    useJUnitPlatform()
+}
+
+tasks.test {
+    finalizedBy(tasks.jacocoTestReport)
 }
 
 jacoco {
