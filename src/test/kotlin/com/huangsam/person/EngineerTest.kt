@@ -25,13 +25,13 @@ class EngineerTest {
     }
 
     @BeforeEach
-    fun setupAppender() {
+    fun setupLoggerAppender() {
         appender.start()
         logger.addAppender(appender)
     }
 
     @AfterEach
-    fun clearAppender() {
+    fun clearLoggerAppender() {
         logger.detachAppender(appender)
         appender.stop()
         appender.list.clear()
