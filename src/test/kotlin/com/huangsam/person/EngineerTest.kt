@@ -79,18 +79,13 @@ class EngineerTest {
     }
 
     @Test
-    fun engineerIsTrusted() {
-        assertTrue(john.isTrusted())
-        assertTrue(mary.isTrusted())
+    fun engineerIsTrustedAndIsNotIntern() {
+        assertTrue(john.isTrusted() and !john.isIntern())
+        assertTrue(mary.isTrusted() and !mary.isIntern())
     }
 
     @Test
-    fun engineerIsNotTrusted() {
-        assertFalse(jack.isTrusted())
-    }
-
-    @Test
-    fun engineerIsIntern() {
-        assertTrue(jack.isIntern())
+    fun engineerIsNotTrustedAndIsIntern() {
+        assertTrue(!jack.isTrusted() and jack.isIntern())
     }
 }
