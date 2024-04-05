@@ -78,8 +78,10 @@ detekt {
 tasks.withType<Detekt>().configureEach {
     reports {
         html.required.set(true)
-        xml.required.set(true)
+        md.required.set(false)
         sarif.required.set(true)
+        txt.required.set(false)
+        xml.required.set(true)
     }
 }
 
