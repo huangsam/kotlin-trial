@@ -1,10 +1,10 @@
-import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
+import io.gitlab.arturbosch.detekt.Detekt
 
 plugins {
     id("org.jetbrains.kotlin.jvm") version "1.9.23"
 
-    // https://github.com/JLLeitschuh/ktlint-gradle
-    id("org.jlleitschuh.gradle.ktlint") version "12.1.0"
+    // https://github.com/detekt/detekt
+    id("io.gitlab.arturbosch.detekt") version "1.23.6"
 
     // https://github.com/ben-manes/gradle-versions-plugin
     id("com.github.ben-manes.versions") version "0.51.0"
@@ -70,19 +70,23 @@ jacoco {
     toolVersion = "0.8.11"
 }
 
-ktlint {
-    reporters {
-        reporter(ReporterType.CHECKSTYLE)
-        reporter(ReporterType.HTML)
-        reporter(ReporterType.JSON)
-        reporter(ReporterType.SARIF)
+detekt {
+    buildUponDefaultConfig = true // preconfigure defaults
+    allRules = false // activate all available (even unstable) rules.
+}
+
+tasks.withType<Detekt>().configureEach {
+    reports {
+        html.required.set(true)
+        xml.required.set(true)
+        sarif.required.set(true)
     }
 }
 
 // Instructions to register and configure a task
 // https://docs.gradle.org/current/userguide/more_about_tasks.html
 tasks.register<Copy>("addHooks") {
-    group = "Help"
+    group = "Setup"
     description = "Adds Git hooks from .hooks to .git/hooks"
     from(".hooks")
     into(".git/hooks")

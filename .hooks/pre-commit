@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -e -u
-echo "Running ktlint check..."
-./gradlew ktlintCheck
+echo "Running detekt check..."
+./gradlew detekt
