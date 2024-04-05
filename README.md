@@ -15,7 +15,7 @@ After that, you can:
 - Run app via `./gradlew run`
 - Test code via `./gradlew test`
 - Build code via `./gradlew build`
-- Check code via `./gradlew detekt`
+- Check code style via `./gradlew detekt`
 
 ### Git hooks
 
