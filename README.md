@@ -16,6 +16,7 @@ After that, you can:
 - Test code via `./gradlew test`
 - Build code via `./gradlew build`
 - Check code style via `./gradlew detekt`
+- Fix code style via `./gradlew detekt --auto-correct`
 
 ### Git hooks
 
