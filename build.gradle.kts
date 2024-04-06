@@ -31,6 +31,7 @@ dependencies {
 
     // https://github.com/Kotlin/kotlinx.coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.0")
 
     // https://github.com/google/gson/tree/main
     implementation("com.google.code.gson:gson:2.10.1")
