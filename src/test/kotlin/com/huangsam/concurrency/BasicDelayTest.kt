@@ -13,7 +13,7 @@ import kotlin.time.measureTime
     ExperimentalTime::class)
 class BasicDelayTest {
     @Test
-    fun helloWorldHasDelay() = runTest {
+    fun helloLogicRunsFifthSecond() = runTest {
         testScheduler.timeSource.measureTime {
             helloWorldWithDelay()
         }
@@ -22,7 +22,7 @@ class BasicDelayTest {
     }
 
     @Test
-    fun numbersHaveDelay() = runTest {
+    fun numberLogicRunsHalfSecond() = runTest {
         testScheduler.timeSource.measureTime {
             numbersWithDelay()
         }
