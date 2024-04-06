@@ -49,6 +49,9 @@ dependencies {
     // Referenced here until Gradle 9.x is official
     // https://docs.gradle.org/8.3/userguide/upgrading_version_8.html
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+    // https://detekt.dev/docs/rules/formatting/
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.6")
 }
 
 kotlin {
