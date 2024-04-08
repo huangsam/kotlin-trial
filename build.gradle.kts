@@ -74,6 +74,14 @@ jacoco {
     toolVersion = "0.8.11"
 }
 
+tasks.jacocoTestReport {
+    reports {
+        html.required = true
+        xml.required = true
+        csv.required = true
+    }
+}
+
 detekt {
     buildUponDefaultConfig = true // preconfigure defaults
     allRules = false // activate all available (even unstable) rules.
