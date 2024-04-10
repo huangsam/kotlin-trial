@@ -15,11 +15,13 @@ const val ONE_HALF = 500L
 // https://kotlinlang.org/docs/coroutines-basics.html#your-first-coroutine
 suspend fun helloWorldWithDelay() =
     coroutineScope {
-        launch {
+        val job = launch {
             delay(ONE_FIFTH)
             logger.info("World!")
         }
         logger.info("Hello")
+        job.join()
+        logger.info("Done")
     }
 
 // https://kotlinlang.org/docs/coroutines-basics.html#coroutines-are-light-weight
