@@ -14,7 +14,6 @@ After that, you can:
 
 - Run app via `./gradlew run`
 - Test code via `./gradlew test`
-- Build code via `./gradlew build`
 - Check code style via `./gradlew detekt`
 - Fix code style via `./gradlew detekt --auto-correct`
 
