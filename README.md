@@ -2,9 +2,9 @@
 
 Coding in Kotlin to:
 
-1. Explore tools like [Detekt](https://detekt.dev/) and [ktlint](https://pinterest.github.io/ktlint/latest/)
-2. Take stock of the overall Kotlin ecosystem
-3. Assess its compatibility with the Java ecosystem
+1. Explore linting, testing and logging frameworks for Kotlin
+2. Understand enough about null safety, lambdas, generics, etc.
+3. Assess its compatibility with Java code
 
 ## Getting started
 
