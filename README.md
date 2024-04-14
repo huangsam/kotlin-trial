@@ -33,14 +33,14 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 ```
 
-It is discussed here in more detail: https://github.com/mockito/mockito/issues/3037
+It is discussed here in more detail: <https://github.com/mockito/mockito/issues/3037>
 
 ## Helpful resources
 
-- https://kotlinlang.org/docs/home.html
-- https://www.w3schools.com/KOTLIN/index.php
-- https://www.baeldung.com/kotlin/
-- https://github.com/KotlinBy/awesome-kotlin
-- https://github.com/akullpp/awesome-java
-- https://openjdk.org/
-- https://www.oracle.com/java/technologies/java-se-support-roadmap.html
+- <https://kotlinlang.org/docs/home.html>
+- <https://www.w3schools.com/KOTLIN/index.php>
+- <https://www.baeldung.com/kotlin/>
+- <https://github.com/KotlinBy/awesome-kotlin>
+- <https://github.com/akullpp/awesome-java>
+- <https://openjdk.org/>
+- <https://www.oracle.com/java/technologies/java-se-support-roadmap.html>
