@@ -1,7 +1,7 @@
 import io.gitlab.arturbosch.detekt.Detekt
 
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "2.0.0"
+    id("org.jetbrains.kotlin.jvm") version "1.9.23"
 
     // https://github.com/detekt/detekt
     id("io.gitlab.arturbosch.detekt") version "1.23.6"
