@@ -27,18 +27,18 @@ repositories {
 dependencies {
     // https://www.slf4j.org/manual.html
     implementation("org.slf4j:slf4j-api:2.0.12")
-    implementation("ch.qos.logback:logback-classic:1.5.5")
+    implementation("ch.qos.logback:logback-classic:1.5.6")
 
     // https://github.com/Kotlin/kotlinx.coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.0")
 
     // https://github.com/google/gson/tree/main
-    implementation("com.google.code.gson:gson:2.10.1")
+    implementation("com.google.code.gson:gson:2.11.0")
 
     // https://www.baeldung.com/mockito-junit-5-extension
-    testImplementation("org.mockito:mockito-core:5.11.0")
-    testImplementation("org.mockito:mockito-junit-jupiter:5.11.0")
+    testImplementation("org.mockito:mockito-core:5.12.0")
+    testImplementation("org.mockito:mockito-junit-jupiter:5.12.0")
 
     // https://github.com/mockito/mockito-kotlin
     testImplementation("org.mockito.kotlin:mockito-kotlin:5.3.1")
