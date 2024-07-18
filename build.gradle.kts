@@ -41,7 +41,7 @@ dependencies {
     testImplementation("org.mockito:mockito-junit-jupiter:5.12.0")
 
     // https://github.com/mockito/mockito-kotlin
-    testImplementation("org.mockito.kotlin:mockito-kotlin:5.3.1")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:5.4.0")
 
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     testImplementation("org.junit.jupiter:junit-jupiter-params")
