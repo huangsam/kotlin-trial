@@ -1,10 +1,10 @@
 import io.gitlab.arturbosch.detekt.Detekt
 
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "1.9.23"
+    id("org.jetbrains.kotlin.jvm") version "2.0.20"
 
     // https://github.com/detekt/detekt
-    id("io.gitlab.arturbosch.detekt") version "1.23.6"
+    id("io.gitlab.arturbosch.detekt") version "1.23.7"
 
     // https://github.com/ben-manes/gradle-versions-plugin
     id("com.github.ben-manes.versions") version "0.51.0"
@@ -27,18 +27,18 @@ repositories {
 dependencies {
     // https://www.slf4j.org/manual.html
     implementation("org.slf4j:slf4j-api:2.0.12")
-    implementation("ch.qos.logback:logback-classic:1.5.6")
+    implementation("ch.qos.logback:logback-classic:1.5.8")
 
     // https://github.com/Kotlin/kotlinx.coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.9.0")
 
     // https://github.com/google/gson/tree/main
     implementation("com.google.code.gson:gson:2.11.0")
 
     // https://www.baeldung.com/mockito-junit-5-extension
-    testImplementation("org.mockito:mockito-core:5.12.0")
-    testImplementation("org.mockito:mockito-junit-jupiter:5.12.0")
+    testImplementation("org.mockito:mockito-core:5.13.0")
+    testImplementation("org.mockito:mockito-junit-jupiter:5.13.0")
 
     // https://github.com/mockito/mockito-kotlin
     testImplementation("org.mockito.kotlin:mockito-kotlin:5.4.0")
@@ -51,7 +51,7 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     // https://detekt.dev/docs/rules/formatting/
-    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.6")
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.7")
 }
 
 kotlin {
