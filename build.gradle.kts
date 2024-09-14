@@ -26,7 +26,7 @@ repositories {
 
 dependencies {
     // https://www.slf4j.org/manual.html
-    implementation("org.slf4j:slf4j-api:2.0.12")
+    implementation("org.slf4j:slf4j-api:2.0.16")
     implementation("ch.qos.logback:logback-classic:1.5.8")
 
     // https://github.com/Kotlin/kotlinx.coroutines
