@@ -10,7 +10,7 @@
       </option>
       <option name="taskNames">
         <list>
-          <option value="bootRun" />
+          <option value="run" />
         </list>
       </option>
       <option name="vmOptions" />

@@ -1,10 +1,5 @@
-import io.gitlab.arturbosch.detekt.Detekt
-
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "2.0.10"
-
-    // https://github.com/detekt/detekt
-    id("io.gitlab.arturbosch.detekt") version "1.23.7"
+    id("org.jetbrains.kotlin.jvm") version "2.0.21"
 
     // https://github.com/ben-manes/gradle-versions-plugin
     id("com.github.ben-manes.versions") version "0.51.0"
@@ -49,9 +44,6 @@ dependencies {
     // Referenced here until Gradle 9.x is official
     // https://docs.gradle.org/8.3/userguide/upgrading_version_8.html
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-
-    // https://detekt.dev/docs/rules/formatting/
-    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.7")
 }
 
 kotlin {
@@ -80,28 +72,4 @@ tasks.jacocoTestReport {
         xml.required = true
         csv.required = true
     }
-}
-
-detekt {
-    buildUponDefaultConfig = true // preconfigure defaults
-    allRules = false // activate all available (even unstable) rules.
-}
-
-tasks.withType<Detekt>().configureEach {
-    reports {
-        html.required.set(true)
-        md.required.set(false)
-        sarif.required.set(true)
-        txt.required.set(false)
-        xml.required.set(true)
-    }
-}
-
-// Instructions to register and configure a task
-// https://docs.gradle.org/current/userguide/more_about_tasks.html
-tasks.register<Copy>("addHooks") {
-    group = "Setup"
-    description = "Adds Git hooks from .hooks to .git/hooks"
-    from(".hooks")
-    into(".git/hooks")
 }
