@@ -49,11 +49,8 @@ application {
     mainClass = "com.huangsam.Application"
 }
 
-tasks.named<Test>("test") {
-    useJUnitPlatform()
-}
-
 tasks.test {
+    useJUnitPlatform()
     finalizedBy(tasks.jacocoTestReport)
 }
 
