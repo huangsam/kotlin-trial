@@ -1,12 +1,12 @@
 [versions]
+gradle-versions = "0.51.0"
 gson = "2.11.0"
 junit-jupiter = "5.11.2"
+kotlin-coro = "1.9.0"
 logback = "1.5.8"
 mockito = "5.14.2"
 mockito-kotlin = "5.4.0"
-kotlin-coro = "1.9.0"
 sl4j = "2.0.16"
-gradle-versions = "0.51.0"
 
 [libraries]
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
@@ -24,5 +24,5 @@ sl4j-api = { module = "org.slf4j:slf4j-api", version.ref = "sl4j" }
 gradle-versions = { id = "com.github.ben-manes.versions", version.ref = "gradle-versions" }
 
 [bundles]
-mockito-all = ["mockito-core", "mockito-junit", "mockito-kotlin"]
 kotlin-coro-all = ["kotlin-coro-core", "kotlin-coro-test"]
+mockito-all = ["mockito-core", "mockito-junit", "mockito-kotlin"]
