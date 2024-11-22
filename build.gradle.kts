@@ -58,6 +58,5 @@ tasks.jacocoTestReport {
     reports {
         html.required = true
         xml.required = true
-        csv.required = true
     }
 }
