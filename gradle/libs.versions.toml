@@ -1,12 +1,12 @@
 [versions]
 gradle-versions = "0.51.0"
 gson = "2.11.0"
-junit-jupiter = "5.11.2"
-kotlin-coro = "1.9.0"
-logback = "1.5.8"
+junit-jupiter = "5.11.4"
+kotlin-coro = "1.10.0"
+logback = "1.5.13"
 mockito = "5.14.2"
 mockito-kotlin = "5.4.0"
-sl4j = "2.0.16"
+slf4j = "2.0.16"
 
 [libraries]
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
@@ -18,7 +18,7 @@ logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "lo
 mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito" }
 mockito-junit = { module = "org.mockito:mockito-junit-jupiter", version.ref = "mockito" }
 mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockito-kotlin" }
-sl4j-api = { module = "org.slf4j:slf4j-api", version.ref = "sl4j" }
+slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
 
 [plugins]
 gradle-versions = { id = "com.github.ben-manes.versions", version.ref = "gradle-versions" }

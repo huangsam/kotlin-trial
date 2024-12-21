@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "2.0.21"
+    kotlin("jvm") version "2.1.0"
 
     // https://github.com/ben-manes/gradle-versions-plugin
     alias(libs.plugins.gradle.versions)
@@ -21,7 +21,7 @@ repositories {
 
 dependencies {
     // https://www.slf4j.org/manual.html
-    implementation(libs.sl4j.api)
+    implementation(libs.slf4j.api)
     implementation(libs.logback.classic)
 
     // https://github.com/Kotlin/kotlinx.coroutines
