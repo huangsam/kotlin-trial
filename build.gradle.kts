@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "2.2.10"
+    kotlin("jvm") version "2.2.20"
 
     // https://github.com/ben-manes/gradle-versions-plugin
     alias(libs.plugins.gradle.versions)
