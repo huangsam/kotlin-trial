@@ -1,6 +1,7 @@
 package com.huangsam
 
 import com.huangsam.concurrency.helloWorldWithDelay
+import com.huangsam.concurrency.loadUserDataParallel
 import com.huangsam.concurrency.numbersWithDelay
 import com.huangsam.hello.Hello
 import com.huangsam.lambda.IntegerFun
@@ -49,6 +50,7 @@ fun demoCoroutines() =
     runBlocking {
         helloWorldWithDelay()
         numbersWithDelay()
+        loadUserDataParallel()
     }
 
 fun demoPerson() {
