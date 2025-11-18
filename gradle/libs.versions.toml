@@ -1,11 +1,11 @@
 [versions]
-gradle-versions = "0.52.0"
-gson = "2.13.1"
-junit-jupiter = "5.12.2"
+gradle-versions = "0.53.0"
+gson = "2.13.2"
+junit-jupiter = "5.14.1"
 kotlin-coro = "1.10.2"
 logback = "1.5.21"
-mockito = "5.18.0"
-mockito-kotlin = "5.4.0"
+mockito = "5.20.0"
+mockito-kotlin = "6.1.0"
 slf4j = "2.0.17"
 
 [libraries]
